@@ -10,5 +10,9 @@ namespace NetCore_Sessions.Models
         public string Name { get; set; }
 
         public string City { get; set; }
+
+
+
+
     }
 }

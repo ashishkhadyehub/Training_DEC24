@@ -1,10 +1,26 @@
 //DI Container
+
+using Microsoft.EntityFrameworkCore;
+using NetCore_Sessions.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//passing connectionstring to DbContext
+builder.Services.AddDbContext<ApplicationDbContext>(options => options
+.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
+
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+
+
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
