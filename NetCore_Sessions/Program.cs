@@ -1,8 +1,8 @@
-//DI Container
+
 
 using Microsoft.EntityFrameworkCore;
 using NetCore_Sessions.Data;
-
+//DI Container
 var builder = WebApplication.CreateBuilder(args);
 
 //passing connectionstring to DbContext
