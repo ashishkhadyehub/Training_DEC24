@@ -13,6 +13,8 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectio
 
 builder.Services.AddScoped(typeof(IGenericRepo<>),typeof(GenericRepo<>));
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddScoped<IUtilityRepo, UtilityRepo>();
+builder.Services.AddScoped<IEmployeeRepo, EmployeeRepo>();
 
 //for login functionality
 builder.Services.AddSession(options =>
